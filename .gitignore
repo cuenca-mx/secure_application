@@ -1,7 +1,11 @@
 .DS_Store
 .dart_tool/
 
+*.log
+*.lock
 .packages
 .pub/
+.idea/
+.vscode/
 
 build/

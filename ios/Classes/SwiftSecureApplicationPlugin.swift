@@ -29,15 +29,13 @@ public class SwiftSecureApplicationPlugin: NSObject, FlutterPlugin {
             } else {
                 let view = UIView(frame: window.frame)
                 view.tag = 99699
-                // 1
-                view.backgroundColor = UIColor(white: 1, alpha: self.opacity)
-                // 2
-                let blurEffect = UIBlurEffect(style: .extraLight)
-                // 3
-                let blurView = UIVisualEffectView(effect: blurEffect)
-                // 4
-                blurView.frame = view.bounds
-                view.addSubview(blurView)
+                let image : UIImage = UIImage(named:"splash")!
+                let coverImage = UIImageView(image: image)
+                coverImage.contentMode = .redraw
+                coverImage.frame = view.bounds
+
+                view.addSubview(coverImage)
+
                 window.addSubview(view)
                 window.bringSubviewToFront(view)
             }
