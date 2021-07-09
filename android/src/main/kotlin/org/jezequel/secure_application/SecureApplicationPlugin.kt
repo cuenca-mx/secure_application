@@ -80,10 +80,10 @@ public class SecureApplicationPlugin: FlutterPlugin, MethodCallHandler, Activity
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
     if (call.method == "secure") {
-      activity?.window?.addFlags(LayoutParams.FLAG_SECURE)
+      activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
       result.success(true)
     } else if (call.method == "open") {
-      activity?.window?.clearFlags(LayoutParams.FLAG_SECURE)
+      activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
         result.success(true)
     } else {
       result.success(true)
