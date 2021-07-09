@@ -82,7 +82,7 @@ public class SecureApplicationPlugin: FlutterPlugin, MethodCallHandler, Activity
     if (call.method == "secure") {
       activity?.window?.addFlags(LayoutParams.FLAG_SECURE)
       result.success(true)
-    } else if (call.method == "unlock") {
+    } else if (call.method == "open" || call.method == "unlock") {
       activity?.window?.clearFlags(LayoutParams.FLAG_SECURE)
         result.success(true)
     } else {
