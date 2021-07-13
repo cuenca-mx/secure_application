@@ -91,25 +91,31 @@ class _SecureApplicationState extends State<SecureApplication>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) async {
-    print('esta aquiiii ya en el state');
+    print('esta aquiiii ya en el state cambioo');
     print(state);
     switch (state) {
       case AppLifecycleState.resumed:
         if (!secureApplicationController.paused) {
+          print('en el primer if');
           if (secureApplicationController.secured &&
               !secureApplicationController.value.locked) {
-            secureApplicationController.open();
+            print('esta en el iff anidado');
+            secureApplicationController.lock();
           }
           if (secureApplicationController.secured &&
               secureApplicationController.value.locked) {
+            print('esta en segundo ifff');
             if (widget.onNeedUnlock != null) {
+              print('segundo anidadoo');
               var authStatus =
                   await widget.onNeedUnlock(secureApplicationController);
               if (authStatus != null) {
+                print('ultimo');
                 secureApplicationController.sendAuthenticationEvent(authStatus);
               }
             }
           }
+          print('al final');
           secureApplicationController.resumed();
         }
         if (mounted) {
@@ -121,7 +127,9 @@ class _SecureApplicationState extends State<SecureApplication>
         break;
       case AppLifecycleState.paused:
         if (!secureApplicationController.paused) {
+          print('en el ciclo paused primer iff');
           if (secureApplicationController.secured) {
+            print('paused segundo ifffff antes de hacer el locked');
             secureApplicationController.lock();
           }
         }
