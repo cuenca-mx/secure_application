@@ -98,7 +98,7 @@ class _SecureApplicationState extends State<SecureApplication>
         if (!secureApplicationController.paused) {
           if (secureApplicationController.secured &&
               !secureApplicationController.value.locked) {
-            secureApplicationController.lock();
+            secureApplicationController.open();
           }
           if (secureApplicationController.secured &&
               secureApplicationController.value.locked) {
