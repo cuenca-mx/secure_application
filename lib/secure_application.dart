@@ -95,7 +95,6 @@ class _SecureApplicationState extends State<SecureApplication>
     print(state);
     switch (state) {
       case AppLifecycleState.resumed:
-        secureApplicationController.unlock();
         if (!secureApplicationController.paused) {
           print('en el primer if');
          /* if (secureApplicationController.secured &&
@@ -118,6 +117,8 @@ class _SecureApplicationState extends State<SecureApplication>
           }
           print('al final');*/
           secureApplicationController.resumed();
+          print('al final');
+          secureApplicationController.unlock();
         }
         if (mounted) {
           setState(() => _removeNativeOnNextFrame = true);
