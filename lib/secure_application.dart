@@ -95,9 +95,10 @@ class _SecureApplicationState extends State<SecureApplication>
     print(state);
     switch (state) {
       case AppLifecycleState.resumed:
+        secureApplicationController.unlock();
         if (!secureApplicationController.paused) {
           print('en el primer if');
-          if (secureApplicationController.secured &&
+         /* if (secureApplicationController.secured &&
               !secureApplicationController.value.locked) {
             print('esta en el iff anidado');
             secureApplicationController.lock();
@@ -115,7 +116,7 @@ class _SecureApplicationState extends State<SecureApplication>
               }
             }
           }
-          print('al final');
+          print('al final');*/
           secureApplicationController.resumed();
         }
         if (mounted) {
@@ -126,13 +127,14 @@ class _SecureApplicationState extends State<SecureApplication>
         super.didChangeAppLifecycleState(state);
         break;
       case AppLifecycleState.paused:
-        if (!secureApplicationController.paused) {
+        secureApplicationController.lock();
+       /* if (!secureApplicationController.paused) {
           print('en el ciclo paused primer iff');
           if (secureApplicationController.secured) {
             print('paused segundo ifffff antes de hacer el locked');
             secureApplicationController.lock();
           }
-        }
+        }*/
         super.didChangeAppLifecycleState(state);
         break;
       default:
