@@ -117,8 +117,8 @@ class _SecureApplicationState extends State<SecureApplication>
           }
           print('al final');*/
           secureApplicationController.resumed();
-          print('al final');
-          secureApplicationController.unlock();
+          print('al finaliiii');
+          secureApplicationController.open();
         }
         if (mounted) {
           setState(() => _removeNativeOnNextFrame = true);
