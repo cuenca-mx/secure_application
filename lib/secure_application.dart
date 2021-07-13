@@ -91,6 +91,8 @@ class _SecureApplicationState extends State<SecureApplication>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) async {
+    print('esta aquiiii ya en el state');
+    print(state);
     switch (state) {
       case AppLifecycleState.resumed:
         if (!secureApplicationController.paused) {
