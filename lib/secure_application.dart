@@ -128,7 +128,7 @@ class _SecureApplicationState extends State<SecureApplication>
         super.didChangeAppLifecycleState(state);
         break;
       case AppLifecycleState.paused:
-        secureApplicationController.lock();
+        secureApplicationController.secure();
        /* if (!secureApplicationController.paused) {
           print('en el ciclo paused primer iff');
           if (secureApplicationController.secured) {
