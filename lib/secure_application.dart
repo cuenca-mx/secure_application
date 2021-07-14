@@ -95,7 +95,8 @@ class _SecureApplicationState extends State<SecureApplication>
     print(state);
     switch (state) {
       case AppLifecycleState.resumed:
-        if (!secureApplicationController.paused) {
+        secureApplicationController.open();
+        /*if (!secureApplicationController.paused) {
           print('en el primer if');
           if (secureApplicationController.secured &&
               !secureApplicationController.value.locked) {
@@ -105,7 +106,6 @@ class _SecureApplicationState extends State<SecureApplication>
           if (secureApplicationController.secured &&
               secureApplicationController.value.locked) {
             print('esta en segundo ifff');
-            secureApplicationController.open();
             if (widget.onNeedUnlock != null) {
               print('segundo anidadoo');
               var authStatus =
@@ -118,23 +118,24 @@ class _SecureApplicationState extends State<SecureApplication>
           }
           print('al final');
           secureApplicationController.resumed();
-        }
-        if (mounted) {
+        }*/
+        /*if (mounted) {
           setState(() => _removeNativeOnNextFrame = true);
         } else {
           _removeNativeOnNextFrame = true;
-        }
+        }*/
         super.didChangeAppLifecycleState(state);
         break;
       case AppLifecycleState.paused:
-        if (!secureApplicationController.paused) {
+        secureApplicationController.secure();
+       /* if (!secureApplicationController.paused) {
           print('en el ciclo paused primer iff');
           if (secureApplicationController.secured) {
             //entra hasta aquiii cuando esta en segundo plano normal
             print('paused segundo ifffff antes de hacer el locked');
             secureApplicationController.lock();
           }
-        }
+        }*/
         super.didChangeAppLifecycleState(state);
         break;
       default:
