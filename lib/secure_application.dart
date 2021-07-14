@@ -91,34 +91,26 @@ class _SecureApplicationState extends State<SecureApplication>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) async {
-    print('esta aquiiii ya en el state cambioo');
-    print(state);
     switch (state) {
       case AppLifecycleState.resumed:
-        secureApplicationController.unlock();
-        /*if (!secureApplicationController.paused) {
-          print('en el primer if');
+        if(Platform.isAndroid) break;
+        if (!secureApplicationController.paused) {
           if (secureApplicationController.secured &&
               !secureApplicationController.value.locked) {
-            print('esta en el iff anidado');
             secureApplicationController.lock();
           }
           if (secureApplicationController.secured &&
               secureApplicationController.value.locked) {
-            print('esta en segundo ifff');
             if (widget.onNeedUnlock != null) {
-              print('segundo anidadoo');
               var authStatus =
                   await widget.onNeedUnlock(secureApplicationController);
               if (authStatus != null) {
-                print('ultimo');
                 secureApplicationController.sendAuthenticationEvent(authStatus);
               }
             }
           }
-          print('al final');
           secureApplicationController.resumed();
-        }*/
+        }
         if (mounted) {
           setState(() => _removeNativeOnNextFrame = true);
         } else {
@@ -127,18 +119,16 @@ class _SecureApplicationState extends State<SecureApplication>
         super.didChangeAppLifecycleState(state);
         break;
       case AppLifecycleState.paused:
-        secureApplicationController.secure();
-       /* if (!secureApplicationController.paused) {
-          print('en el ciclo paused primer iff');
+        if(Platform.isAndroid) break;
+        if (!secureApplicationController.paused) {
           if (secureApplicationController.secured) {
-            //entra hasta aquiii cuando esta en segundo plano normal
-            print('paused segundo ifffff antes de hacer el locked');
             secureApplicationController.lock();
           }
-        }*/
+        }
         super.didChangeAppLifecycleState(state);
         break;
       default:
+        if(Platform.isAndroid) break;
         super.didChangeAppLifecycleState(state);
         break;
     }
