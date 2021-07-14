@@ -82,7 +82,6 @@ public class SecureApplicationPlugin: FlutterPlugin, MethodCallHandler, Activity
     if (call.method == "secure") {
       activity?.window?.addFlags(LayoutParams.FLAG_SECURE)
       result.success(true)
-      //we remove flags on unlock method call
     } else if (call.method == "open") {
       activity?.window?.clearFlags(LayoutParams.FLAG_SECURE)
         result.success(true)
