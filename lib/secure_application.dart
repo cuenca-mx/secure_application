@@ -90,7 +90,7 @@ class _SecureApplicationState extends State<SecureApplication>
     WidgetsBinding.instance.removeObserver(this);
   }
 
-  @override
+ /* @override
   void didChangeAppLifecycleState(AppLifecycleState state) async {
     switch (state) {
       case AppLifecycleState.resumed:
@@ -133,7 +133,7 @@ class _SecureApplicationState extends State<SecureApplication>
         super.didChangeAppLifecycleState(state);
         break;
     }
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
