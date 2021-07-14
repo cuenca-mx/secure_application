@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/widgets.dart';
 import 'package:secure_application/secure_application_native.dart';
@@ -90,11 +89,10 @@ class _SecureApplicationState extends State<SecureApplication>
     WidgetsBinding.instance.removeObserver(this);
   }
 
- /* @override
+  @override
   void didChangeAppLifecycleState(AppLifecycleState state) async {
     switch (state) {
       case AppLifecycleState.resumed:
-        if(Platform.isAndroid) break;
         if (!secureApplicationController.paused) {
           if (secureApplicationController.secured &&
               !secureApplicationController.value.locked) {
@@ -120,7 +118,6 @@ class _SecureApplicationState extends State<SecureApplication>
         super.didChangeAppLifecycleState(state);
         break;
       case AppLifecycleState.paused:
-        if(Platform.isAndroid) break;
         if (!secureApplicationController.paused) {
           if (secureApplicationController.secured) {
             secureApplicationController.lock();
@@ -129,11 +126,10 @@ class _SecureApplicationState extends State<SecureApplication>
         super.didChangeAppLifecycleState(state);
         break;
       default:
-        if(Platform.isAndroid) break;
         super.didChangeAppLifecycleState(state);
         break;
     }
-  }*/
+  }
 
   @override
   Widget build(BuildContext context) {
