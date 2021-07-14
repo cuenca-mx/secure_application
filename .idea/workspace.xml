@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5efc04d0-795f-471d-87a0-7cd575c6da15" name="Default Changelist" comment="" />
+    <list default="true" id="5efc04d0-795f-471d-87a0-7cd575c6da15" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/kotlin/org/jezequel/secure_application/SecureApplicationPlugin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/kotlin/org/jezequel/secure_application/SecureApplicationPlugin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/secure_application.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/secure_application.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,9 +25,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="788" y="220" width="597" height="490" key="find.popup" timestamp="1626143561733">
+    <state x="788" y="220" width="597" height="490" key="find.popup" timestamp="1626226442170">
       <screen x="0" y="25" width="1680" height="940" />
     </state>
-    <state x="788" y="220" width="597" height="490" key="find.popup/0.25.1680.940@0.25.1680.940" timestamp="1626143561733" />
+    <state x="788" y="220" width="597" height="490" key="find.popup/0.25.1680.940@0.25.1680.940" timestamp="1626226442170" />
   </component>
 </project>
